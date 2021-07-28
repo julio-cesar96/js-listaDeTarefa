@@ -1,3 +1,4 @@
+import { carregaTarefa } from "./CarregaTarefa.js";
 import BotaoConcluir from "./ConcluirTarefa.js";
 import BotaoApagar from "./ApagarTarefa.js";
 
@@ -5,7 +6,6 @@ import BotaoApagar from "./ApagarTarefa.js";
 export const handleNovoItem = (evento) => {
     evento.preventDefault();
     const tarefas = JSON.parse(localStorage.getItem('tarefas')) || [];
-    const lista = document.querySelector('[data-lista-tarefas]')
     const input = document.querySelector('[data-form-input]');
     const valorInput = input.value;
     
@@ -19,14 +19,12 @@ export const handleNovoItem = (evento) => {
     };
 
     const tarefasAtualizadas = [...tarefas, dados];
-
-    const criarTarefa = Tarefa(dados);
-    
-    lista.appendChild(criarTarefa);
     
     localStorage.setItem('tarefas', JSON.stringify(tarefasAtualizadas));
 
     input.value = " ";
+
+    carregaTarefa();
 }
 
 export const Tarefa = ({ valorInput, dataFormatada }) => {
