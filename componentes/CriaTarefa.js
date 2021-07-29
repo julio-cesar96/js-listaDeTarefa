@@ -11,12 +11,14 @@ export const handleNovoItem = (evento) => {
     
     const calendario = document.querySelector('[data-form-date]');
     const data = moment(calendario.value);
+    const horario = data.format('HH:mm');
     const dataFormatada = (data.format('DD/MM/YYYY'));
     const concluida = false;
 
     const dados = {
         valorInput,
         dataFormatada,
+        horario,
         concluida
     };
 
@@ -29,10 +31,10 @@ export const handleNovoItem = (evento) => {
     carregaTarefa();
 }
 
-export const Tarefa = ({ valorInput, dataFormatada, concluida }, id) => {
+export const Tarefa = ({ valorInput, horario, concluida }, id) => {
     const tarefa = document.createElement('li');
     
-    const conteudo = `<p class="content">${dataFormatada} * ${valorInput}</p>`;
+    const conteudo = `<p class="content">${horario} * ${valorInput}</p>`;
     if (concluida) {
         tarefa.classList.add('done');
     }
@@ -42,7 +44,7 @@ export const Tarefa = ({ valorInput, dataFormatada, concluida }, id) => {
     tarefa.innerHTML = conteudo;
 
     tarefa.appendChild(BotaoConcluir(carregaTarefa, id));
-    tarefa.appendChild(BotaoApagar());
+    tarefa.appendChild(BotaoApagar(carregaTarefa, id));
 
     return tarefa;
 }
