@@ -10,6 +10,7 @@ const apagarTarefa = (atualiza, id) => {
 const BotaoApagar = (atualiza, id) => {
     const botaoApagar = document.createElement('button');
 
+    botaoConcluir.classList.add('delete-button');
     botaoApagar.innerText = 'Apagar';
 
     botaoApagar.addEventListener('click', () => apagarTarefa(atualiza, id));
