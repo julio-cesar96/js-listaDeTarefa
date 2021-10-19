@@ -12,7 +12,7 @@ const BotaoConcluir = (atualiza, id) => {
     const botaoConcluir = document.createElement('button');
     
     botaoConcluir.classList.add('check-button');
-    botaoConcluir.innerText = 'concluir';
+    botaoConcluir.innerText = 'Concluir';
 
     botaoConcluir.addEventListener('click', () => concluirTarefa(atualiza, id));
 

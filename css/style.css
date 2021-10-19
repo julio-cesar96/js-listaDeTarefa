@@ -48,6 +48,7 @@
     background-color: #ffffff;
     border-color:#ffffff;
     border-radius: 12px;
+    margin-right: 12px;
   }
   
   .form-button {
@@ -81,22 +82,28 @@
     padding: 1rem 3rem;
   }
   
-  .check-button, .delete-button {
+  .check-button {
     background-color: #519839;
+    color:#fff;
+    font-weight: 600;
     border: none;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
     outline: none;
     border-radius: 2px;
     cursor: pointer;
+    border-radius: 8px;
   }
 
   .delete-button {
     background-color: #b04632;
+    color:#fff;
+    font-weight: 600;
     border: none;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
     outline: none;
     border-radius: 2px;
     cursor: pointer;
+    border-radius: 8px;
   }
   
   .task.done .check-button {
